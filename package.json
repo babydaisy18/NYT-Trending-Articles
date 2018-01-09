@@ -1,0 +1,25 @@
+{
+  "name": "hw2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Carolina Zheng",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "grunt": "^0.4.5",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^1.1.1",
+    "gulp-zip": "^3.0.2",
+    "proxyquire": "^1.7.1",
+    "sinon": "^1.16.1"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "request": "^2.60.0",
+    "sax": "^1.1.1"
+  }
+}
