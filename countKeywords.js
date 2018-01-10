@@ -19,7 +19,6 @@ var countKeywords = function (POPULAR_XML, callback) {
     //parse some text for a node
     if (status == true) {
       tempArray = t.split(';');
-      //this is undefined???
       for (var i = 0; i < tempArray.length; i++) {
         tempArray[i] = tempArray[i].trim();
       }
@@ -39,9 +38,6 @@ var countKeywords = function (POPULAR_XML, callback) {
     }
   };
 
-  // HINT: the 'end' event happens only when the XML parser is finished.
-  // This means you should be able to finalize your top keywords and call
-  // the callback from this function!
   parser.onend = function () {
 
     var obj = {};
@@ -54,9 +50,7 @@ var countKeywords = function (POPULAR_XML, callback) {
         obj[tempArray[i]] = 1;
       }
     }
-    //Array.prototype.sort()
-    //pass in any array --> anon function with two parameters
-    //some comparator between obj[a] obj[b]
+
     var objKeys = Object.keys(obj);
     objKeys.sort(function (a, b) {
       return obj[b] - obj[a];

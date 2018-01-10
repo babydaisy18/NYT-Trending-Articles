@@ -5,7 +5,6 @@ var pullTrendingArticles = require('./pullTrendingArticles');
 var countKeywords = require('./countKeywords');
 var processKeywords = require('./processKeywords');
 
-// HELPER, don't modify this function
 // Prints related article headlines and links from the array of objects
 var displayRelatedArticles = function (error, relatedArticles) {
   if (!error) {
@@ -26,9 +25,7 @@ var displayRelatedArticles = function (error, relatedArticles) {
   console.log('test');
 };
 
-// Final method: try to use async.waterfall. Errors are handled in the callback.
 var getTrendingKeywords = function (callback) {
-  // Your code goes here
   async.waterfall([pullTrendingArticles, 
     countKeywords,  
     processKeywords], function (error, results) {
@@ -36,10 +33,7 @@ var getTrendingKeywords = function (callback) {
     });
 };
 
-// This block allows you to test your code by running
-// 'node getTrendingKeywords.js' in your project folder.
-// We don't want to run it in a test environment, however,
-// so we check the NODE_ENV variable before running it.
+// test code
 if (process.env.NODE_ENV !== 'test') {
   getTrendingKeywords(displayRelatedArticles);
 }
